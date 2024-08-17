@@ -5,12 +5,12 @@ const Card = () => {
   const [products, setProducts] = useState([]);
 
   // pagination
-  const itemsPerpage = 10;
+  const itemsPerpage = 15;
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const fetchData = () => {
-    fetch(`https://dummyjson.com/products`)
+  const fetchData = (currentPage) => {
+    fetch(`https://dummyjson.com/products?limit=${itemsPerpage}&skip=${(currentPage- 1)*itemsPerpage}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
@@ -18,13 +18,18 @@ const Card = () => {
       });
   };
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData(currentPage);
+  }, [currentPage]);
 
   console.log(products);
 
   const handlePageChange = (index)=>{
 setCurrentPage(index+1)
+  }
+  const handlePrevious = ()=>{
+    if(currentPage > 1){
+setCurrentPage(currentPage - 1)
+    }
   }
   return (
     <div className="llo">
@@ -43,7 +48,7 @@ setCurrentPage(index+1)
 
       <div className="pagination lop">
       
-       
+       <button onClick={handlePrevious} disabled={currentPage == 1}>Previous</button>
        {
         Array.from({length: totalPages},(_,index)=>{
           return  <button onClick={()=>handlePageChange(index)} key={index}>{index +1 }</button>
