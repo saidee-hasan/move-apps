@@ -8,7 +8,7 @@
     position: relative;
     text-align: center;
     color: white;
-    background-color: rgb(246, 255, 240);
+    background-color: aliceblue;
 }
 .sidebar-text{
     position: absolute;
@@ -17,7 +17,7 @@
     transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 576px) {
 
     .sidebar-img > img{
         width: 100%;
