@@ -5,7 +5,7 @@ const Card = () => {
   const [products, setProducts] = useState([]);
 
   // pagination
-  const itemsPerpage = 1;
+  const itemsPerpage = 10;
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
