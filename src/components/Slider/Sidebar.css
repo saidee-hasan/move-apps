@@ -17,7 +17,7 @@
     transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 570px) {
 
     .sidebar-img > img{
         width: 100%;
