@@ -4,65 +4,56 @@ import "./Card.css";
 const Card = () => {
   const [products, setProducts] = useState([]);
 
-  // pagination
-  const itemsPerpage = 10;
-  const [totalPages, setTotalPages] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [noOfElement,setnoOfElement]=useState(9);
+  const LodeMore =()=>{
+    setnoOfElement(noOfElement + noOfElement);
+  }
+  const slice =products.slice(0,noOfElement)
 
-  const fetchData = (currentPage) => {
-    fetch(`https://dummyjson.com/products?limit=${itemsPerpage}&skip=${(currentPage- 1)*itemsPerpage}`)
+
+  const fetchData = () => {
+    fetch(`https://dummyjson.com/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
-        setTotalPages(Math.ceil(data.total / itemsPerpage));
+
       });
   };
   useEffect(() => {
-    fetchData(currentPage);
-  }, [currentPage]);
+    fetchData();
+  }, []);
 
   console.log(products);
 
-  const handlePageChange = (index)=>{
-setCurrentPage(index+1)
-  }
-  const handlePrevious = ()=>{
-    if(currentPage > 1){
-setCurrentPage(currentPage - 1)
-    }
-  }
   return (
-    <div className="llo">
-      {products.map((product) => {
+    <div className="container mx-auto">
+      {slice.map((product) => {
+
+
+
+
         return (
+
+
           <>
-            <div className="lop border ">
-              <section className="tt">
-                <img src={product.thumbnail} alt="" />
-                <h1>{product.brand}</h1>
-              </section>
+            <div className="lop py-5 px-5">
+
+              <div className="rounded-lg shadow-md w-32  grid  bg-gray-50 overflow-hidden">
+                <img className="mx-auto pt-4" src={product.thumbnail} alt="" />
+                  <h2 className="font-bold text-xl">Black Tea</h2>
+                  <p className="text-gray-600">
+                    Creamer could be replaced by fresh milk
+                  </p>
+              
+              </div>
+
+
             </div>
+            
           </>
         );
       })}
-
-      <div className="pagination lop">
-      
-       <button onClick={handlePrevious} disabled={currentPage == 1}>Previous</button>
-       {
-        Array.from({length: totalPages},(_,index)=>{
-          return  <button onClick={()=>handlePageChange(index)} key={index}>{index +1 }</button>
-
-        })
-       }
-
-
-
-{/*        
-        {Array.from({ length: totalPages }, (_, index) => {
-          return <button key={index}>{index + 1}</button>;
-        })} */}
-      </div>
+      <button  onClick={()=> LodeMore()} className="w-full bg-slate-800 text-white">Load More</button>
     </div>
   );
 };

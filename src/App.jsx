@@ -14,8 +14,10 @@ function App() {
     <Navbar></Navbar>
     <br />
     <br />
+
+    <br />
     <Slider/>
-    <Card/>
+    {/* <Card/> */}
     </>
   )
 }
