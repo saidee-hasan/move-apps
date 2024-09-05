@@ -1,4 +1,5 @@
 import 'flowbite';
+
 import Logo from "../../assets/icon/logo.png"
 
 
@@ -64,6 +65,9 @@ const Navbar = () => {
     </div>
   </div>
 </nav>
+
+
+
 
         </div>
     );
