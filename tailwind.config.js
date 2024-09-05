@@ -16,5 +16,5 @@ export default {
     extend: {},
   },
   
-  plugins: [nextui(), require('flowbite/plugin')]
+  plugins: [nextui(), require('flowbite/plugin'),   flowbite.plugin(),]
 }
