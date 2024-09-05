@@ -9,7 +9,8 @@ const Card = () => {
   const LodeMore = () => {
     setnoOfElement(noOfElement + noOfElement);
   };
-  const slice = products.slice(0, noOfElement);
+  const slice = products.slice(0, noOfElement).reverse();
+  console.log(slice)
 
 
 
@@ -41,7 +42,7 @@ const Card = () => {
                   alt="NextUI Fruit Image with Zoom"
                   src={product.thumbnail}
                 />
-                <h2 className="font-bold text-xl">Black Tea</h2>
+                <h2 className="font-bold text-xl">{product.title}</h2>
                 <p className="text-gray-600">
                   Creamer could be replaced by fresh milk
                 </p>
@@ -52,12 +53,14 @@ const Card = () => {
       })}
      
     </div>
+    <div className="p-8 lg:container">
     <button
         onClick={() => LodeMore()}
-        className="w-full  bg-slate-800  text-white"
+        className="w-full  bg-slate-800 h-12 rounded-xl text-white "
       >
         Load More
       </button>
+      </div>
     </div>
   );
 };
