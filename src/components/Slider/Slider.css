@@ -1,6 +1,6 @@
-.sidebar-img > img{
+ /* .sidebar-img > img{
     width: 100%;
-    height: 600px;
+  
    
 }
 
@@ -16,12 +16,4 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-@media only screen and (max-width: 576px) {
-
-    .sidebar-img > img{
-        width: 100%;
-        height: 400px;
-    }
-
-} 
+ */
