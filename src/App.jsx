@@ -1,26 +1,16 @@
-
-import './App.css'
-import Card from './components/Card/Card'
-import { Component } from './components/Navbar/Navbar'
-
-
-
-import Slider from './components/Slider/Slider'
-
-
+import { RouterProvider } from "react-router-dom";
+import "./App.css";
+import { router } from "./Routes/Router";
+import Layout from "./Layout/Layout";
 
 function App() {
-
-
   return (
     <>
-<Component/>
-
-    <Slider/>
-    <br />
-    <Card/>
+      <RouterProvider router={router}>
+        <Layout></Layout>
+      </RouterProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.5",
+    "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.6",
     "bootstrap": "^5.3.3",
     "flowbite": "^2.5.1",
@@ -21,7 +23,9 @@
     "react-icon": "^1.0.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.26.1",
-    "react-slideshow-image": "^4.3.1"
+    "react-slick": "^0.30.2",
+    "react-slideshow-image": "^4.3.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

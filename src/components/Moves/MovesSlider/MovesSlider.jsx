@@ -1,10 +1,8 @@
 import { Fade, Slide, Zoom } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
-import"./Slider.css";
-import Moves from "../../assets/icon/movie.png"
-import Course from "../../assets/icon/course.png"
+import 'react-slideshow-image/dist/styles.css';
 
-const Slider = () => {
+
+const MovesSlider = () => {
     
 const fadeImages = [
     {
@@ -37,28 +35,11 @@ const fadeImages = [
            </Zoom>
          </div>
 
-         {/*Card   */}
-         <div className='grid md:grid-cols-3 grid-cols-1 gap-8 '>
-          <div className="bg-orange-400 bg-opacity-45  text-center rounded-xl py-5 flex justify-center">
-            <img className='h-9' src={Moves} alt="" />
-            <p className='text-2xl'>Tamil bangla</p>
-          </div>
-          <div className="bg-red-400 bg-opacity-45 text-center rounded-xl py-5 flex justify-center">
-            <img className='h-16' src={Course} alt="" />
-            <p className='text-2xl'>Tamil bangla</p>
-          </div>
-          <div className="bg-green-400 bg-opacity-45  text-center rounded-xl py-5 flex justify-center">
-            <img className='h-16' src={Course} alt="" />
-            <p className='text-2xl'>Tamil bangla</p>
-          </div>
-          
-
-
-         </div>
+       
 
 
              </div>
     );
 };
 
-export default Slider;
+export default MovesSlider;
