@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Moves from "../../../assets/icon/movie.png";
 import Course from "../../../assets/icon/course.png";
 import { Image } from "@nextui-org/react";
+import { Link } from "react-router-dom";
 
 const MoveCard = () => {
   const [products, setProducts] = useState([]);
@@ -57,7 +58,7 @@ const MoveCard = () => {
                     alt="NextUI Fruit Image with Zoom"
                     src={product.thumbnail}
                   />
-                  <h2 className="font-bold text-xl">{product.title}</h2>
+                  <h2 className="font-bold text-xl"><Link to={'/move'+ "/"+product.title} >{product.title}</Link>  </h2>
                   <p className="text-gray-600">
                     Creamer could be replaced by fresh milk
                   </p>

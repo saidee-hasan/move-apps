@@ -3,18 +3,17 @@ import "./App.css";
 import { router } from "./Routes/Router";
 import Layout from "./Layout/Layout";
 import { useEffect, useState } from "react";
-import { div, h1 } from "framer-motion/client";
-import Spiner from "./components/Spiner/Spiner";
+
+
 
 function App() {
-  const [text,setText] = useState('');
+
   const [showImg,setShowImg]= useState(true);
 useEffect(()=>{
 
   setTimeout(()=>{
       setShowImg(false)
-    setText('ffff')
-  },800)
+  },80)
 },[])
 
 
